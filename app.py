@@ -8,7 +8,7 @@ def install(package):
 for pkg in ["torch", "transformers", "gradio", "requests", "numpy", "gdown"]:
     install(pkg)
 
-# 📥 Imports
+
 import os
 import torch
 import torch.nn as nn
@@ -16,10 +16,10 @@ import gradio as gr
 import gdown
 from transformers import AutoTokenizer, AutoModel
 
-#Device Setup
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-#Model Download
+
 MODEL_PATH = "NERpaarvai.pt"
 GDRIVE_FILE_ID = "10K-Wq8omarYFxDQqOwkFMUu0eePqebji"
 GDRIVE_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
@@ -31,7 +31,7 @@ if not os.path.exists(MODEL_PATH):
 else:
     print("✅ Model already exists.")
 
-#Tokenizer and label mappings
+
 model_name = "xlm-roberta-base"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
@@ -39,7 +39,7 @@ label_list = ['O', 'B-PER', 'I-PER', 'B-ORG', 'I-ORG', 'B-LOC', 'I-LOC']
 label2id = {label: i for i, label in enumerate(label_list)}
 id2label = {i: label for label, i in label2id.items()}
 
-#Model Architecture
+
 class NERModel(nn.Module):
     def __init__(self, num_labels):
         super(NERModel, self).__init__()
@@ -63,13 +63,13 @@ class NERModel(nn.Module):
             loss = loss_fct(logits.view(-1, logits.shape[-1]), labels.view(-1))
         return {"loss": loss, "logits": logits}
 
-#Load Model
+
 model = NERModel(num_labels=len(label_list)).to(device)
 model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
 model.eval()
 print("✅ Model loaded and ready!")
 
-#Inference function
+
 def predict_custom(text):
     words = text.strip().split()
     encoding = tokenizer(words, is_split_into_words=True, return_offsets_mapping=True,
@@ -95,7 +95,7 @@ def predict_custom(text):
 
     return "\n".join(final_output)
 
-# 🌐 Gradio App
+
 gr.Interface(
     fn=predict_custom,
     inputs=gr.Textbox(lines=2, label="தமிழ் உரையை உள்ளிடுக (Enter Tamil Text)", placeholder="உதாரணம்: அமித்ஷா இன்று சென்னை வந்தார்"),
