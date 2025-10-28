@@ -9,29 +9,29 @@ NERpaarvai is a transformer-based NER model trained on the Naamapadam dataset us
 
 ---
 
-## 🚀 Demo
+##  Demo
 
-🌐 **Live Hugging Face Space:**  
+**Live Hugging Face Space:**  
 [👉 Click here to try the model](https://huggingface.co/spaces/Aranganathan-S/NERpaarvai)
 
 ---
 
-## 📌 Features
+## Features
 
-- 🔍 Entity recognition for Tamil text
-- 🧠 Powered by custom fine-tuned Transformer embeddings
-- 🎨 Clean and simple Gradio UI for easy interaction
-- 🪄 Token-wise highlighting of detected entities
+- Entity recognition for Tamil text
+- Powered by custom fine-tuned Transformer embeddings
+- Clean and simple Gradio UI for easy interaction
+- Token-wise highlighting of detected entities
 
 ---
 
-## 🧠 Model Info
+## Model Info
 
 The model was trained on the [Naamapadam](https://huggingface.co/datasets/ai4bharat/naamapadam) dataset using a BiLSTM + FFNN decoder on top of Transformer embeddings (IndicBERT or XLM-R). Evaluation was done on token-level classification metrics (F1, precision, recall).
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python
 - Hugging Face Transformers
@@ -41,7 +41,7 @@ The model was trained on the [Naamapadam](https://huggingface.co/datasets/ai4bha
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ```bash
 git clone https://github.com/yourusername/tamil-ner-gradio.git
@@ -51,7 +51,7 @@ python app.py
 
 ---
 
-## 📝 Sample Output
+## Sample Output
 
 ![Gradio Screenshot]
 <img width="1885" height="559" alt="image" src="https://github.com/user-attachments/assets/81c86a12-d85b-4cc8-9024-8426f8235f3f" />
@@ -59,7 +59,7 @@ python app.py
 
 ---
 
-## 📂 Repo Structure
+## Repo Structure
 
 ```
 .
@@ -71,13 +71,13 @@ python app.py
 
 ---
 
-## 📄 License
+## License
 
 MIT License. Feel free to use, modify, or contribute 🙌
 
 ---
 
-## 🙏 Credits
+## Credits
 
 - Naamapadam Dataset - AI4Bharat  
 - Hugging Face Transformers  
