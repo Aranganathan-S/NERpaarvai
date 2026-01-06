@@ -27,9 +27,9 @@ GDRIVE_URL = f"https://drive.google.com/uc?id={GDRIVE_FILE_ID}"
 if not os.path.exists(MODEL_PATH):
     print("⬇️ Downloading model using gdown...")
     gdown.download(GDRIVE_URL, MODEL_PATH, quiet=False)
-    print("✅ Model downloaded successfully!")
+    print("Model downloaded successfully!")
 else:
-    print("✅ Model already exists.")
+    print("Model already exists.")
 
 
 model_name = "xlm-roberta-base"
@@ -100,6 +100,6 @@ gr.Interface(
     fn=predict_custom,
     inputs=gr.Textbox(lines=2, label="தமிழ் உரையை உள்ளிடுக (Enter Tamil Text)", placeholder="உதாரணம்: அமித்ஷா இன்று சென்னை வந்தார்"),
     outputs=gr.Textbox(label="NER பெறுபாடு ( Output )"),
-    title="🪔 NERpaarvai- நேர்பார்வை    - Tamil Named Entity Recognition",
-    description="🔍 XLM-RoBERTa + BiLSTM NER model fine-tuned on Naamapadam dataset"
+    title=" NERpaarvai- நேர்பார்வை    - Tamil Named Entity Recognition",
+    description=" XLM-RoBERTa + BiLSTM NER model fine-tuned on Naamapadam dataset"
 ).launch()
