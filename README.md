@@ -1,4 +1,4 @@
-# 🪔 Tamil Named Entity Recognition (NER) with Gradio UI
+# 🪔 NERpaarvai - Tamil Named Entity Recognition (NER)
 
 NERpaarvai is a transformer-based NER model trained on the Naamapadam dataset using XLM-R + BiLSTM + FFNN. It identifies person, organization, and location entities in Tamil text.
 
